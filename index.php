@@ -89,7 +89,18 @@
         crossorigin="anonymous"></script>
     <script>
         $(function () {
-            $(".datepicker").datepicker();
+            $("#checkIn").datepicker({minDate:0});
+            $("#checkOut").datepicker({minDate:0});
+        });
+
+        $(function(){
+            $("#checkIn").change(function(){
+                var date = new Date();
+                date = $("#checkIn").datepicker("getDate");
+                var day = date.getDate() + 1;
+                date.setDate(day);
+                $("#checkOut").datepicker("option","minDate",date);
+            });
         });
 
         
