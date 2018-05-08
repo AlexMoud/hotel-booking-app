@@ -9,7 +9,7 @@
     
     $response = json_decode($str_json,true); // decoding received JSON to array
 	
-    $reviewText = $response['reviewText'];
+    $reviewText = strip_tags($response['reviewText']);
     $room_id = $response['room_id'];
     $rate = $response['rate'];
     
@@ -36,7 +36,7 @@
                             </h5>
                         </div>
                     </div>
-                    <p><?php echo $row["text"];?></p>
+                    <p><?php echo htmlentities($row["text"]);?></p>
                 <?php
                 }
             } 

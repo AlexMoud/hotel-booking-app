@@ -202,7 +202,7 @@
                                                     </h5>
                                                 </div>
                                             </div>
-                                            <p><?php echo $row["text"];?></p>
+                                            <p><?php echo htmlentities($row["text"]);?></p>
                                             <?php
                                         }
                                     }
