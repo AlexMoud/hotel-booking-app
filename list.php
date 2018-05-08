@@ -251,7 +251,7 @@
                     type: 'POST',
                     data: myJSON,
                     success: function (data) {
-                        $("#result").html(data);
+                        $("#result").hide().html(data).fadeIn("slow");
                     }
                 });
             });
@@ -273,7 +273,7 @@
                     type: 'POST',
                     data: myJSON,
                     success: function (data) {
-                        $("#result").html(data);
+                        $("#result").hide().html(data).fadeIn("slow");
                     }
                 });
             });
@@ -293,7 +293,7 @@
                     type: 'POST',
                     data: myJSON,
                     success: function (data) {
-                        $("#result").html(data);
+                        $("#result").hide().html(data).fadeIn("slow");
                     }
                 });
             });
