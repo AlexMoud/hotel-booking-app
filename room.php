@@ -94,6 +94,18 @@
                 <div class="container" id="mainBody">
             
                     <div class="row">
+                        <!-- <div class="col-lg-12">
+                            <div class="alert alert-success alert-dismissable" id="successAddFavorite">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                You added it to favorites!
+                            </div>
+                        </div> -->
+                        <!-- <div class="col-lg-12">
+                            <div class="alert alert-success alert-dismissable" id="successRemoveFavorite">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                You removed it from favorites!
+                            </div>
+                        </div> -->
                         <div class="col-lg-12">
                             <div id="bookingHeading">
                                 <p><?php echo $row["name"]." - ".$row["city"].", ".$row["area"];?>
@@ -267,6 +279,10 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy_tUxDPUASSljiW45soo6AM1np-Gtbkc&callback=myMap"></script>
     <script type="text/javascript">
+        // $(function(){
+        //     $('.alert').hide();
+        // });
+
         function bookRoom() {
             var room_id = document.getElementById("room_id").getAttribute("value");
             var checkIn = document.getElementById("urlCheckIn").getAttribute("value");
@@ -340,7 +356,8 @@
                         type: 'POST',
                         data: myJSON,
                         success: function (data) {
-                            alert("You added it to favorite");
+                            // $('#successAddFavorite').show();
+                            alert("You succesfully added room to favorite")
                         }
                     });
                 } else {
@@ -353,7 +370,8 @@
                         type: 'POST',
                         data: myJSON,
                         success: function (data) {
-                            alert("You removed it to favorite");
+                            // $('#successRemoveFavorite').show();
+                            alert("You succesfully removed room to favorite")                            
                         }
                     });
                 }

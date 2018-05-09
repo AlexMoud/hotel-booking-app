@@ -18,10 +18,18 @@
 
 <body>
     <?php include 'header.html' ?>
-
+    
+    
     <!-- MAIN CONTAINER -->
+    
     <div class="container" id="mainBody">
         <div class="row">
+            <!-- <div class="col-lg-12">
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    You need to assign check in and check out values in order to continue
+                </div>
+            </div> -->
             <!-- SIDE MENU - FILTERS -->
             <div class="col-lg-3" id="filters">
                 <h5 style="text-align: center">FIND THE PERFECT HOTEL</h5>
@@ -29,24 +37,48 @@
                 <form>
                     <select id="CountOfGuests" >
                         <option value="">Count of guests</opiton>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                        <?php
+                        include_once('php/db.php');
+                            $sql =  'SELECT DISTINCT count_of_guests FROM room';
+                            $result = $conn->query($sql);
+                            if ($result->num_rows > 0) {
+                                while($row = $result->fetch_assoc()) {
+                            ?>
+                            <option value="<?php echo $row["count_of_guests"];?>"><?php echo $row["count_of_guests"];?></option>
+                            <?php 
+                                }
+                            }
+                            ?>
                     </select>
                     <select id="roomType" >
                         <option value="">Room Type</opiton>
-                        <option value="1">Single Room</option>
-                        <option value="2">Double Room</option>
-                        <option value="3">Triple Room</option>
-                        <option value="4">Fourfold Room</option>
+                        <?php 
+                            include_once('php/db.php');
+                            $sql =  'SELECT * FROM room_type';
+                            $result = $conn->query($sql);
+                            if ($result->num_rows > 0) {
+                                while($row = $result->fetch_assoc()) {
+                            ?>
+                            <option value="<?php echo $row["id"];?>"><?php echo $row["room_type"];?></option>
+                            <?php 
+                                }
+                            }
+                            ?>
                     </select>
                     <select id="city" >
                         <option value="">City</opiton>
-                        <option value="Athens">Athens</option>
-                        <option value="Thessaloniki">Thessaloniki</option>
-                        <option vakue="Kavala">Kavala</option>
-                        <option value="Santorini">Santorini</option>
+                        <?php 
+                        include_once('php/db.php');
+                        $sql =  'SELECT DISTINCT city FROM room';
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                        ?>
+                        <option value="<?php echo $row["city"];?>"><?php echo $row["city"];?></option>
+                        <?php 
+                            }
+                        }
+                        ?>
                     </select>
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -65,7 +97,7 @@
                         value="<?php if (isset($_POST["checkIn"])) {
                             echo $_POST['checkIn'];
                         } 
-                        ?>">
+                        ?>" readonly>
                     </div>
                     <div class="input-group" id="checkOutDiv">
                         <div class="input-group-prepend">
@@ -75,7 +107,7 @@
                         value="<?php if(isset($_POST["checkOut"])){
                             echo $_POST['checkOut'];
                         }
-                        ?>">
+                        ?>" readonly>
                         
                     </div>
                     
@@ -187,10 +219,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
     <script>
-        
+        // $(function() {
+        //     $('.alert').hide();
+        // });
         
         $(function () {
-            
             $("#checkIn").datepicker({minDate:0, dateFormat: "dd-mm-yy"});
             $("#checkOut").datepicker({minDate:0, dateFormat: "dd-mm-yy"});
         });
@@ -243,7 +276,8 @@
             if($("#checkIn").val()!=="" && $("#checkOut").val()!=="") {
                 window.location.href = "room.php?name=" + name +"&checkIn="+checkIn+"&checkOut="+checkOut;
             } else {
-                alert("You must give a check in and check out value");
+                // $('.alert').show();
+                alert("Assign check in and check out value to continue");
             }
         }
 

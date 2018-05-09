@@ -7,8 +7,8 @@
     <title>WAD Project</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/main.css">        
-    <link rel="stylesheet" type="text/css" href="css/landing.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">        
+        <link rel="stylesheet" type="text/css" href="css/landing.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -69,7 +69,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="calendarIcon"><i class="fa fa-calendar"></i></span>
                         </div>
-                           <input id="checkIn" name="checkIn" type="text" class="datepicker form-control" placeholder="Check-in Date">
+                           <input id="checkIn" name="checkIn" type="text" class="datepicker form-control" placeholder="Check-in Date" readonly>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -77,7 +77,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="calendarIcon2"><i class="fa fa-calendar"></i></span>
                         </div>
-                            <input id="checkOut" name="checkOut" type="text" class="datepicker form-control" placeholder="Check-out Date">
+                            <input id="checkOut" name="checkOut" type="text" class="datepicker form-control" placeholder="Check-out Date" readonly>
                     </div>
                 </div>
             </div>
@@ -103,14 +103,8 @@
         crossorigin="anonymous"></script>
     <script>
          $(function () {
-            
             $("#checkIn").datepicker({minDate:0, dateFormat: "dd-mm-yy"});
             $("#checkOut").datepicker({minDate:0, dateFormat: "dd-mm-yy"});
-        });
-
-        $(function () {
-            $("#checkIn").datepicker({minDate:0});
-            $("#checkOut").datepicker({minDate:0});
         });
 
         $(function(){
