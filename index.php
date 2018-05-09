@@ -61,10 +61,20 @@
 
             <div class="row">
                 <div class="col-lg-6">
-                    <input id="checkIn" name="checkIn" type="text" class="datepicker" placeholder="Check-in Date">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="calendarIcon"><i class="fa fa-calendar"></i></span>
+                        </div>
+                           <input id="checkIn" name="checkIn" type="text" class="datepicker form-control" placeholder="Check-in Date">
+                    </div>
                 </div>
                 <div class="col-lg-6">
-                    <input id="checkOut" name="checkOut" type="text" class="datepicker" placeholder="Check-out Date">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="calendarIcon2"><i class="fa fa-calendar"></i></span>
+                        </div>
+                            <input id="checkOut" name="checkOut" type="text" class="datepicker form-control" placeholder="Check-out Date">
+                    </div>
                 </div>
             </div>
 
@@ -88,7 +98,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
     <script>
-        
+         $(function () {
+            
+            $("#checkIn").datepicker({minDate:0, dateFormat: "dd-mm-yy"});
+            $("#checkOut").datepicker({minDate:0, dateFormat: "dd-mm-yy"});
+        });
 
         $(function () {
             $("#checkIn").datepicker({minDate:0});

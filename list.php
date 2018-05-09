@@ -57,16 +57,28 @@
                         </div>
                     </div>
                     <div id="slider-range"></div>
-                    <input id="checkIn" type="text" class="datepicker" placeholder="Check-in Date" 
-                    value="<?php if (isset($_POST["checkIn"])) {
-                        echo $_POST['checkIn'];
-                    } 
-                    ?>">
-                    <input id="checkOut" type="text" class="datepicker" placeholder="Check-out Date"
-                     value="<?php if(isset($_POST["checkOut"])){
-                         echo $_POST['checkOut'];
-                     }
-                    ?>">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="calendarIcon"><i class="fa fa-calendar"></i></span>
+                        </div>
+                        <input id="checkIn" type="text" class="datepicker form-control" placeholder="Check-in Date" 
+                        value="<?php if (isset($_POST["checkIn"])) {
+                            echo $_POST['checkIn'];
+                        } 
+                        ?>">
+                    </div>
+                    <div class="input-group" id="checkOutDiv">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="calendarIcon2"><i class="fa fa-calendar"></i></span>
+                        </div>
+                        <input id="checkOut" type="text" class="datepicker form-control" placeholder="Check-out Date"
+                        value="<?php if(isset($_POST["checkOut"])){
+                            echo $_POST['checkOut'];
+                        }
+                        ?>">
+                        
+                    </div>
+                    
                     <!-- <input type="submit" class="btn btn-danger" value="FIND A HOTEL" width="100%"> -->
                 </form>
             </div>
@@ -178,8 +190,9 @@
         
         
         $(function () {
-            $("#checkIn").datepicker({minDate:0});
-            $("#checkOut").datepicker({minDate:0});
+            
+            $("#checkIn").datepicker({minDate:0, dateFormat: "dd-mm-yy"});
+            $("#checkOut").datepicker({minDate:0, dateFormat: "dd-mm-yy"});
         });
 
         $(function(){
