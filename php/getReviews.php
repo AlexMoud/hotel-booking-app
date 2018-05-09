@@ -32,7 +32,7 @@
             }
         }   
     } else {
-        echo "<h5>No Results :(</h5>";
+        echo "<p>No Reviews yet :(</p>";
     }
     $conn->close();
 ?>

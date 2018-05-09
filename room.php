@@ -68,8 +68,19 @@
                 if($row["pet_friendly"]) {
                     $pet_friendly = "";
                 } else {
-                    $pet_friendly = "NOT";
+                    $pet_friendly = "Not";
                 }
+                if($row["wifi"]==1) {
+                    $wifi = "Yes";
+                } else {
+                    $wifi = "No";                    
+                } 
+                if($row["parking"]==1) {
+                    $parking = "Has";
+                } else {
+                    $parking = "No";                    
+                } 
+
                 $sqlBook = 'SELECT * FROM bookings WHERE room_id='.$row["room_id"].'';
                 $result1 = $conn->query($sqlBook);
                 if($result1->num_rows > 0){
@@ -118,13 +129,13 @@
                                     <p class="infoText"><i class="fa fa-hotel" aria-hidden="true"></i> <?php echo $row["room_type"];?></p>
                                 </li>
                                 <li class="infoLi">
-                                    <p class="infoText"><i class="fa fa-car" aria-hidden="true"></i> <?php echo $row["parking"];?> Parking</p>
+                                    <p class="infoText"><i class="fa fa-car" aria-hidden="true"></i> <?php echo $parking;?> Parking</p>
                                 </li>
                                 <li class="infoLi">
-                                    <p class="infoText"><i class="fa fa-wifi" aria-hidden="true"></i> WIFI: Yes</p>
+                                    <p class="infoText"><i class="fa fa-wifi" aria-hidden="true"></i> WIFI: <?php echo $wifi;?></p>
                                 </li>
                                 <li class="infoLi">
-                                    <p class="infoText"><i class="fa fa-paw" aria-hidden="true"></i> <?php echo $pet_friendly;?> PET FRIENDLY</p>
+                                    <p class="infoText"><i class="fa fa-paw" aria-hidden="true"></i> <?php echo $pet_friendly;?> Pet Friendly</p>
                                 </li>
                             </ul>
                             <!-- <hr> -->
@@ -152,6 +163,7 @@
                     <!-- Map  -->
                     <div class="row">
                         <div class="col-lg-12">
+                            <h5><i class="fa fa-map-marker"></i> Location</h5>
                             <div id="lat" value="<?php echo $row["lat_location"];?>"></div>
                             <div id="long" value="<?php echo $row["lng_location"]?>"></div>                            
                             <div id="map"></div>

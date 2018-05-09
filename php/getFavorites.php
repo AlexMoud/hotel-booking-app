@@ -28,7 +28,7 @@
             }
         }   
     } else {
-        echo "<h6>No Results :(</h6>";
+        echo "<p>No Favorite rooms yet :(</p>";
     }
     $conn->close();
 ?>

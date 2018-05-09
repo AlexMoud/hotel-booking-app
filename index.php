@@ -21,7 +21,11 @@
     <!-- Search Box -->
     <div class="container">
         <form action="list.php" method="POST">
-            
+        <div class="row">
+                <div class="col-lg-12">
+                    <p id="searchQuote">Search and find the perfect room for you...</p>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-lg-6">
                     <select id="city" name="city">
