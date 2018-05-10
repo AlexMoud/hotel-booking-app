@@ -34,14 +34,13 @@ function goToRoom(name) {
     var checkIn = $('#checkIn').val();
     var checkOut = $('#checkOut').val();
     if ($("#checkIn").val() !== "" && $("#checkOut").val() !== "") {
-        window.location.href = "room.php?name=" + name + "&checkIn=" + checkIn + "&checkOut=" + checkOut;   
+        window.location.href = "room.php?name=" + name + "&checkIn=" + checkIn + "&checkOut=" + checkOut;
     } else {
-        $('.alert').css("display","block");
+        alert("You need to assign check in and check out values to continue.");
     }
 }
 
 $(function send() {
-
     $('#city').change(function () {
         var city = document.getElementById("city").value;
         var roomType = document.getElementById("roomType").value;
@@ -61,8 +60,6 @@ $(function send() {
             }
         });
     });
-
-
 
     $('#CountOfGuests').change(function () {
         var city = document.getElementById("city").value;

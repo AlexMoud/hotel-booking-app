@@ -1,5 +1,3 @@
-/* ############################################################# */
-
 .container {
     padding: 1%;
     margin: 0 auto;
@@ -45,10 +43,6 @@ h5 {
     text-align: center;
 }
 
-.price p {
-    margin: 0 auto;
-}
-
 .row {
     margin: 2px;
 }
@@ -75,4 +69,10 @@ img {
 
 #reviewResults i {
     color: #FFD700;
+}
+
+.resultItem {
+    border-radius:3px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 10px;
 }

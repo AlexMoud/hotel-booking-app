@@ -15,7 +15,7 @@
         <form action="list.php" method="POST">
         <div class="row">
                 <div class="col-lg-12">
-                    <p id="searchQuote">Search and find the perfect room for you...</p>
+                    <h5 id="searchQuote">Find the perfect room for you...</h5>
                 </div>
             </div>
             <div class="row">
@@ -85,14 +85,7 @@
     <?php include 'footer.html' ?>
 
 
-    <!-- Date picker jQuery -->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <!-- Bootstrap JS Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
+    <?php  include 'scripts.html' ?>
     <script src="js/datepicker.js"></script>
 </body>
 

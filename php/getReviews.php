@@ -22,7 +22,7 @@
             $sql1 =  'SELECT * FROM room WHERE room_id='.$row1["room_id"].'';
             $result1 = $conn->query($sql1);
             while($row = $result1->fetch_assoc()) { ?>
-                <h6><?php echo $counter.". ".$row["name"];?></h6>
+                <h4><?php echo $counter.". ".$row["name"];?></h4>
                 <h5>
                 <?php for ($i = 0; $i < $rate ; $i++) { ?>
                     <i class="fa fa-star"></i>

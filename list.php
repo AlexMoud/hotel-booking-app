@@ -12,12 +12,6 @@
     <!-- MAIN CONTAINER -->
     <div class="container" id="mainBody">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="alert alert-danger alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    You need to assign check in and check out values in order to continue
-                </div>
-            </div>
             <!-- SIDE MENU - FILTERS -->
             <div class="col-lg-3" id="filters">
                 <h5 style="text-align: center">FIND THE PERFECT HOTEL</h5>
@@ -69,14 +63,20 @@
                         ?>
                     </select>
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <input type="text" id="min" readonly style="border:0;font-size:0.9em">
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <input type="text" id="max" readonly style="border:0;font-size:0.9em">
+                        <div class="col-lg-12">
+                            <input type="text" id="min" readonly>
+                            <input type="text" id="max" readonly>                            
                         </div>
                     </div>
                     <div id="slider-range"></div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <p style="float:left;font-size:0.9em;">PRICE MIN</p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <p style="float:right;font-size:0.9em;">PRICE MAX</p>                            
+                        </div>
+                    </div>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="calendarIcon"><i class="fa fa-calendar"></i></span>

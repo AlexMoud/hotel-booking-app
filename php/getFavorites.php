@@ -22,7 +22,7 @@
             while($row1 = $result1->fetch_assoc()) {
                 if($row["status"]==1) {    
                     $counter++;   ?>
-                    <h6><?php echo $counter.". ".$row1["name"];?></h6>
+                    <h4><?php echo $counter.". ".$row1["name"];?></h4>
                 <?php
                 }
             }
