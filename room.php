@@ -1,19 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">        
-    <title>WAD Project</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
-        crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/main.css">                
+    <?php include 'head.html' ?>             
     <link rel="stylesheet" type="text/css" href="css/room.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 </head>
-
 <body>
     <?php include 'header.html'?>
     
@@ -135,7 +125,7 @@
                             <nav id="info">
                             <ul class="infoMenu">
                                 <li class="infoLi">
-                                    <p class="infoText"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $row["count_of_guests"];?> Count of guests</p>
+                                    <p class="infoText"><i class="fa fa-user" aria-hidden="true"></i> Guests: <?php echo $row["count_of_guests"];?></p>
                                 </li>
                                 <li class="infoLi">
                                     <p class="infoText"><i class="fa fa-hotel" aria-hidden="true"></i> <?php echo $row["room_type"];?></p>
@@ -253,14 +243,7 @@
     
     
 
-    <!-- Date picker jQuery -->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <!-- Bootstrap JS Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
+    <?php  include 'scripts.html' ?>
     <script>
         function myMap() {
             var latitude = document.getElementById("lat").getAttribute("value");
@@ -278,108 +261,7 @@
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy_tUxDPUASSljiW45soo6AM1np-Gtbkc&callback=myMap"></script>
-    <script type="text/javascript">
-        // $(function(){
-        //     $('.alert').hide();
-        // });
-
-        function bookRoom() {
-            var room_id = document.getElementById("room_id").getAttribute("value");
-            var checkIn = document.getElementById("urlCheckIn").getAttribute("value");
-            var checkOut = document.getElementById("urlCheckOut").getAttribute("value");
-            var obj = { "room_id": room_id, "checkIn": checkIn, "checkOut": checkOut };
-            var myJSON = JSON.stringify(obj);
-            var x = document.getElementById("bookButton").value;
-            if(x==="Already Booked") {
-                console.log(x);
-            } else {
-                $.ajax({
-                    url: "php/bookRoom.php",
-                    dataType: "html",
-                    type: 'POST',
-                    data: myJSON,
-                    success: function () {
-                        $("#bookButton").html("Already Booked");
-                        $("#bookButton").attr('value', 'Already Booked');
-                    }
-                });
-            }
-        }
-
-        function addReview(){
-            if(document.getElementById('star1').checked) {
-                var rate = 1;
-            } else if(document.getElementById('star2').checked) {    
-                var rate = 2;
-            } else if(document.getElementById('star3').checked) {    
-                var rate = 3;
-            } else if(document.getElementById('star4').checked) {    
-                var rate = 4;
-            } else if(document.getElementById('star5').checked) {    
-                var rate = 5;
-            } else {
-                var rate = 0;
-                alert("You must give a rating from 1 to 5");
-                return;
-            }
-
-
-            var reviewText = document.getElementById("reviewText").value;
-            var room_id = document.getElementById("room_id").getAttribute("value");
-            var obj = { "reviewText": reviewText, "room_id": room_id, "rate": rate };
-            var myJSON = JSON.stringify(obj);
-            $.ajax({
-                url: "php/addReview.php",
-                dataType: "html",
-                type: 'POST',
-                data: myJSON,
-                success: function (data) {
-                    $("#reviews").html(data);
-                }
-            });
-        }
-
-        $(function addFavorite(){
-            var status = document.getElementById("status").getAttribute("value");
-            if(status == 1 ) {
-                $("#heart").prop('checked', true);
-            }
-
-            $("#heart").change(function(){
-                if(document.getElementById('heart').checked) {
-                    var room_id = document.getElementById("room_id").getAttribute("value");
-                    var obj = { "room_id": room_id };
-                    var myJSON = JSON.stringify(obj);
-                    $.ajax({
-                        url: "php/addFavorite.php",
-                        dataType: "html",
-                        type: 'POST',
-                        data: myJSON,
-                        success: function (data) {
-                            // $('#successAddFavorite').show();
-                            alert("You succesfully added room to favorite")
-                        }
-                    });
-                } else {
-                    var room_id = document.getElementById("room_id").getAttribute("value");
-                    var obj = {"room_id": room_id};
-                    var myJSON = JSON.stringify(obj);
-                    $.ajax({
-                        url: "php/addFavorite.php",
-                        dataType: "html",
-                        type: 'POST',
-                        data: myJSON,
-                        success: function (data) {
-                            // $('#successRemoveFavorite').show();
-                            alert("You succesfully removed room to favorite")                            
-                        }
-                    });
-                }
-            });
-        });
-            
-
-    </script>
+    <script src="js/room.js"></script>
 </body>
 
 </html>
