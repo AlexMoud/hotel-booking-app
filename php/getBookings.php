@@ -55,7 +55,12 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                             <div class="price">
-                                <p>Per Night: <?php echo $row["price"];?>€</p>
+                                <p>Total Cost: <?php 
+                                $firstDate = strtotime($checkIn); // or your date as well
+                                $secondDate = strtotime($checkOut);
+                                $datediff =  $secondDate - $firstDate;
+                                echo (round($datediff / (60 * 60 * 24))) * $row["price"];
+                                ?>€</p>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
