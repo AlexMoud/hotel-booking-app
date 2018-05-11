@@ -193,6 +193,8 @@
         </div>
         <!-- mainContainer -->
     </div>
+    <div id="postCity" value="<?php echo $_POST["city"] ?>"></div>
+    <div id="postRoomType" value="<?php echo $_POST["roomType"]?>"></div>
     
     <?php include 'footer.html' ?>
     <?php  include 'scripts.html' ?>

@@ -1,3 +1,27 @@
+$(function() {
+    var city = $('#postCity').attr("value");
+    if( city == "Athens") {
+        $('#city option:eq(1)').prop("selected",true);
+    } else if ( city == "Thessaloniki") {
+        $('#city option:eq(2)').prop("selected",true);                
+    } else if ( city == "Kavala") {
+        $('#city option:eq(3)').prop("selected",true);                
+    }else if ( city == "Santorini") {
+        $('#city option:eq(4)').prop("selected",true);                
+    } 
+    
+    var roomType = $('#postRoomType').attr("value");
+    if( roomType == 1) {
+        $('#roomType option:eq(1)').prop("selected",true);
+    } else if ( roomType == 2) {
+        $('#roomType option:eq(2)').prop("selected",true);                
+    } else if ( roomType == 3) {
+        $('#roomType option:eq(3)').prop("selected",true);                
+    } else if ( roomType == 4) {
+        $('#roomType option:eq(4)').prop("selected",true);                
+    }
+});
+
 $(function () {
     $("#slider-range").slider({
         range: true,

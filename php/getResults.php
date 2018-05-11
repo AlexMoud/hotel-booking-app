@@ -5,7 +5,7 @@
     
     include_once('db.php');
 
-    $str_json = file_get_contents('php://input'); //($_POST doesn't work here)
+    $str_json = file_get_contents('php://input');
     
     $response = json_decode($str_json,true); // decoding received JSON to array
 	
@@ -20,6 +20,7 @@
         $sql = "SELECT * FROM room WHERE";
     }
 
+    // making sql string 
     if($city!=="" && $CountOfGuests !=="" && $roomType!=="") {
         $sql =  $sql.  " room_type=$roomType AND city='$city' AND count_of_guests=$CountOfGuests AND price BETWEEN $min AND $max";
     } else if ($city !== "" &&  $CountOfGuests !=="") {
@@ -41,7 +42,6 @@
 	$result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
-        // output data of each row
         while($row = $result->fetch_assoc()) {
             if($row["room_type"]==1){
                 $row["room_type"] = "Single Room";
