@@ -34,6 +34,7 @@
                                 <i class="fa fa-star"></i>
                             <?php } ?>
                             </h5>
+                            <p style="font-size:0.8em">Add time: <?php echo $row["date_created"];?></p>                    
                         </div>
                     </div>
                     <p><?php echo htmlentities($row["text"]);?></p>

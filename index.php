@@ -14,12 +14,12 @@
     <div class="container">
         <form action="list.php" method="POST">
         <div class="row">
-                <div class="col-lg-12">
+                <div class="col-sm-12">
                     <h5 id="searchQuote">Find the perfect room for you...</h5>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <select id="city" name="city">
                         <option value="">City</opiton>
                         <?php 
@@ -36,7 +36,7 @@
                         ?>
                     </select>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <select id="roomType" name="roomType">
                         <option value="">Room Type</opiton>
                         <?php 
@@ -56,7 +56,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="calendarIcon"><i class="fa fa-calendar"></i></span>
@@ -64,7 +64,7 @@
                            <input id="checkIn" name="checkIn" type="text" class="datepicker form-control" placeholder="Check-in Date" readonly>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-md-6">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="calendarIcon2"><i class="fa fa-calendar"></i></span>

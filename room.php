@@ -84,19 +84,7 @@
                 <div class="container" id="mainBody">
             
                     <div class="row">
-                        <!-- <div class="col-lg-12">
-                            <div class="alert alert-success alert-dismissable" id="successAddFavorite">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                You added it to favorites!
-                            </div>
-                        </div> -->
-                        <!-- <div class="col-lg-12">
-                            <div class="alert alert-success alert-dismissable" id="successRemoveFavorite">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                You removed it from favorites!
-                            </div>
-                        </div> -->
-                        <div class="col-lg-12">
+                        <div class="col-sm-12">
                             <div id="bookingHeading">
                                 <p><?php echo $row["name"]." - ".$row["city"].", ".$row["area"];?>
                                 | Reviews: 
@@ -108,20 +96,20 @@
                                     } 
                                 }   ?>
                                 | <input type="checkBox" id="heart" name="favortie" value="On" />
-                                <label class="full" for="heart" title="Favorite"></label></p>
-                                <p style="float:right">Per night: <?php echo $row["price"] ;?>€</p>
+                                <label class="full" for="heart" title="Favorite"></label>
+                                | Per night: <?php echo $row["price"] ;?>€</p>
                             </div>
                         </div>
                     </div>
             
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-sm-6">
                             <img src="images/rooms/<?php echo $row["photo"];?>" alt="room-image-here">
                         </div>
                     </div>
             
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-sm-12">
                             <nav id="info">
                             <ul class="infoMenu">
                                 <li class="infoLi">
@@ -146,7 +134,7 @@
                     </div>
             
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-sm-12">
                             <div id="description">
                                 <h5>Room Description</h5>
                                 <p><?php echo $row["long_description"];?></p>
@@ -155,7 +143,7 @@
                     </div>
                 
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-sm-12">
                             <div id="state">
                                 <button value="<?php echo $buttonValue;?>" onclick="bookRoom()" class="btn btn-danger" id="bookButton" style="float: right;"><?php echo $buttonValue;?></button>
                             </div>
@@ -164,7 +152,7 @@
                 
                     <!-- Map  -->
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-sm-12">
                             <h5><i class="fa fa-map-marker"></i> Location</h5>
                             <div id="lat" value="<?php echo $row["lat_location"];?>"></div>
                             <div id="long" value="<?php echo $row["lng_location"]?>"></div>                            
@@ -173,7 +161,7 @@
                     </div>
                     
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-sm-12">
                             <div id="description">
                                 <h5>Add Review</h5>
                                 <form action="Javascript:addReview()">
@@ -194,7 +182,7 @@
                     <div id="room_id" value="<?php echo $row["room_id"];?>"></div>
                     
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-sm-12">
                             <div id="description">
                                 <h5>Reviews</h5>  
                                 <div id="reviews">
@@ -208,12 +196,13 @@
                                             $reviewCounter++;
                                             ?>
                                             <div class="row" id="listReviews">
-                                                <div class="col-lg-12">
+                                                <div class="col-sm-12">
                                                     <h5><?php echo $reviewCounter;?> - user_default1 - 
                                                     <?php for ($i = 0; $i < $row["rate"] ; $i++) { ?>
                                                         <i class="fa fa-star"></i>
                                                     <?php } ?>
                                                     </h5>
+                                                    <p style="font-size:0.8em">Add time: <?php echo $row["date_created"];?></p>
                                                 </div>
                                             </div>
                                             <p><?php echo htmlentities($row["text"]);?></p>

@@ -35,11 +35,11 @@
                 }?>
                 <div class="container resultItem">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <div class="col-sm-3">
                             <img src="images/rooms/<?php echo $row["photo"];?>">
                         </div>
                         
-                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" id="itemBody">
+                        <div class="col-sm-9" id="itemBody">
                             <h5><?php echo $row["name"]?></h5>
                             <h6><?php echo $row["city"].','.$row["area"];?></h6>
                             <p><?php echo $row["short_description"];?></p>
@@ -47,13 +47,13 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-sm-12">
                             <button class="btn btn-danger goToRoom" onclick="goToRoom('<?php echo $row["name"];?>')">Go to Room</button>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <div class="col-sm-3">
                             <div class="price">
                                 <p>Total Cost: <?php 
                                 $firstDate = strtotime($checkIn); // or your date as well
@@ -63,16 +63,16 @@
                                 ?>€</p>
                             </div>
                         </div>
-                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                        <div class="col-sm-9">
                             <div class="info">
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <div class="col-sm-4">
                                         <p>Check in: <?php echo $checkIn;?></p>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <div class="col-sm-4">
                                         <p>Check out: <?php echo $checkOut;?></p>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <div class="col-sm-4">
                                         <p> <?php echo $row["room_type"];?></p>
                                     </div>
                                 </div>
