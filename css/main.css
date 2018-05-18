@@ -7,65 +7,35 @@ html, body {
     font-family: 'Open Sans', sans-serif;
 }
 
-nav {
+.navbar {
     background-color: white;
+    font-size: 18px;
+    padding: 0;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    margin-right: 15vw;
 }
 
-#firstMenuItem {
-    float: left;
-    padding-left: 15%;
+.navbar-brand {
+    margin-left: 15vw;
+    color: black;
 }
 
-#secondMenuItem {
-    float: right;
-}
-
-#profileItem {
-    float: right;
-    padding-right: 15%;
-}
-
-@media only screen and (max-width: 768px) {
-    #firstMenuItem {
-        float: left;
-        padding-left: 0;
-    }
-    #secondMenuItem {
-        float: right;
-    }
-    #profileItem {
-        float: right;
-        padding-right: 0;
-    }
+.navbar-toggler {
+    margin: 8px;
 }
 
 header li a {
-    color: rgb(40, 40, 40);
+    color: black;
     font-weight: bold;
     text-decoration: none;
     display: block;
-    padding: 15px;
-}
-
-header li p {
-    color: rgb(40, 40, 40);
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    padding: 15px;
-    margin-bottom: 0;
+    padding: 15px !important; 
 }
 
 header li a:hover {
     background-color: rgb(235, 235, 235);
-    text-decoration: none;
     color: black;
 }
 

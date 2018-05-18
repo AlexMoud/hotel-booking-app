@@ -10,9 +10,6 @@
     }
 }
 
-#profileActive {
-    color: rgb(240, 100, 0);
-}
 
 #mainBody {
     background: radial-gradient(at 50% 0, gray, transparent 70%);
@@ -122,4 +119,8 @@ input#min[readonly] , input#max[readonly]{
     border-radius:3px;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 10px;
+}
+
+.resultItem:hover {
+    box-shadow: -1px -2px 8px 0 rgba(0, 0, 0, 0.2), 1px 5px 8px 0 rgba(0, 0, 0, 0.19);    
 }
