@@ -1,5 +1,14 @@
+.infoMenu {
+    list-style-type: none;
+    margin: 0;
+    font-size: 18px;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(240, 100, 0) !important;
+}
+
 #info {
-    background-color: rgb(240, 100, 0);
+    background-color: rgb(240, 100, 0) !important;
 }
 
 #info>ul>li:last-child {
@@ -25,7 +34,7 @@
     text-align: center;
 }
 
-@media only screen and (max-width:719px){
+@media only screen and (max-width:893px) {
     .infoLi {
         border-right: none;
     }
@@ -204,4 +213,3 @@ fieldset, label {
 #bookingHeading:not(:checked) label:hover~label {
     color: red;
 }
-
