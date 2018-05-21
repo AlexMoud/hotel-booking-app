@@ -11,7 +11,7 @@
     <?php include 'header.html' ?>
     
     <!-- Search Box -->
-    <div class="container">
+    <div class="container searchMenu">
         <form action="list.php" method="POST">
         <div class="row">
                 <div class="col-sm-12">
@@ -76,7 +76,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <input type="submit" class="btn btn-danger" value="Search">
+                    <input type="submit" class="btn btn-success" value="Search">
                 </div>
             </div>
         </form>

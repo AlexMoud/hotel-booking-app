@@ -4,11 +4,11 @@
     font-size: 18px;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(240, 100, 0) !important;
+    background-color: rgb(20,70, 160) !important;
 }
 
 #info {
-    background-color: rgb(240, 100, 0) !important;
+    background-color: rgb(20,70, 160) !important;
 }
 
 #info>ul>li:last-child {
@@ -81,7 +81,7 @@ input[type=submit] {
 }
 
 #bookingHeading {
-    background-color: rgb(240, 100, 0);
+    background-color: rgb(20,70, 160);
     color: white;
     border-radius: 3px;
     padding: 1%;
@@ -105,20 +105,20 @@ img {
 #boxItem {
     width: 100%;
     height: 100%;
-    background-color: rgb(240, 100, 0);
+    background-color: rgb(20,70, 160);
     color: white;
     padding: 1%;
     text-align: center;
 }
 
 #description {
-    border-left: 2px solid rgb(240, 100, 0);
+    border-left: 2px solid rgb(20,70, 1600);
     padding: 1%;
     text-align: justify;
 }
 
 h5 {
-    color: rgb(240, 100, 0);
+    color: rgb(20,70, 160);
 }
 
 #map {
@@ -173,7 +173,7 @@ fieldset, label {
 /* hover current star */
 
 .rating:not(:checked)>label:hover~label {
-    color: #FFD700;
+    color: rgb(240,100,0);
 }
 
 /* hover previous stars in list */
@@ -185,11 +185,11 @@ fieldset, label {
 /* lighten current selection */
 
 .rating>input:checked~label:hover~label {
-    color: #FFED85;
+    color: rgb(240,100,0);
 }
 
 #bookingHeading i, #listReviews i {
-    color: #FFD700;
+    color: rgb(240,100,0);
 }
 
 /* HEART */

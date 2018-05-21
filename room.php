@@ -75,8 +75,10 @@
                 $result1 = $conn->query($sqlBook);
                 if($result1->num_rows > 0){
                     $buttonValue = "Already Booked";
+                    $buttonClass = "btn-danger";                                     
                 } else {
-                    $buttonValue = "Book it";                    
+                    $buttonValue = "Book it";  
+                    $buttonClass = "btn-success";                 
                 }
                 ?>
                 
@@ -87,9 +89,9 @@
                         <div class="col-sm-12">
                             <div id="bookingHeading">
                                 <p><?php echo $row["name"]." - ".$row["city"].", ".$row["area"];?>
-                                | Reviews: 
-                                <?php 
+                                <?php
                                 if($rate!==0){ 
+                                    ?>| Reviews: <?php
                                     for ($i = 0; $i < $rate ; $i++) { ?>
                                         <i class="fa fa-star"></i>
                                     <?php 
@@ -128,7 +130,6 @@
                                     <p class="infoText"><i class="fa fa-paw" aria-hidden="true"></i> <?php echo $pet_friendly;?> Pet Friendly</p>
                                 </li>
                             </ul>
-                            <!-- <hr> -->
                             </nav>                              
                         </div>
                     </div>
@@ -145,7 +146,7 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div id="state">
-                                <button value="<?php echo $buttonValue;?>" onclick="bookRoom()" class="btn btn-danger" id="bookButton" style="float: right;"><?php echo $buttonValue;?></button>
+                                <button value="<?php echo $buttonValue;?>" onclick="bookRoom()" class="btn <?php echo $buttonClass;?>" id="bookButton" style="float: right;"><?php echo $buttonValue;?></button>
                             </div>
                         </div>
                     </div>
@@ -173,7 +174,7 @@
                                         <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>    
                                     </fieldset>
                                     <textarea id="reviewText" rows="4" placeholder="Review" required></textarea>
-                                    <input type="submit" class="btn btn-danger" value="Submit" width="25%">
+                                    <input type="submit" class="btn btn-success" value="Submit" width="25%">
                                 </form>    
                             </div>
                         </div>
@@ -208,6 +209,8 @@
                                             </div>
                                             <?php
                                         }
+                                    } else {
+                                        echo "<em>No reviews yet.</em>";
                                     }
                                     ?>
                                 </div>

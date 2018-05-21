@@ -14,7 +14,9 @@ function bookRoom() {
             type: 'POST',
             data: myJSON,
             success: function () {
-                $("#bookButton").html("Already Booked");
+                $("#bookButton").removeClass("btn-success");
+                $("#bookButton").addClass("btn-danger")
+                $("#bookButton").text("Already Booked");
                 $("#bookButton").attr('value', 'Already Booked');
             }
         });

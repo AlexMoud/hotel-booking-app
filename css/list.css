@@ -10,7 +10,6 @@
     }
 }
 
-
 #mainBody {
     background: radial-gradient(at 50% 0, gray, transparent 70%);
     background-size: 100% 8px;
@@ -39,14 +38,14 @@ input[type=submit] {
 }
 
 .bookingHeading h5 {
-    background-color: rgb(240, 100, 0);
+    background-color: rgb(20,70, 160);
     color: white;
     border-radius: 3px;
     padding: 1%;
 }
 
-h5 {
-    color: rgb(240, 100, 0);
+#filters h5 {
+    color: white;
 }
 
 .goToRoom {
@@ -80,8 +79,13 @@ h5 {
     font-size: 14px;
 }
 
-#itemBody {
-    border-left: 1px solid rgb(240, 100, 0);
+.itemBody {
+    border-left: 1px solid rgb(20,70, 160);
+}
+
+.itemBody h5 {
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 img {
@@ -94,33 +98,55 @@ img {
     margin-top: 10px;
 }
 
-#checkOutDiv {
-    margin-bottom: 10px;
-}
-
-input#min[readonly] , input#max[readonly]{
-    background-color:lightgray;
-    border:0;
-    font-size:0.9em;
+input#min[readonly], input#max[readonly] {
+    background-color: lightgray;
+    border: 0;
+    font-size: 0.9em;
     border-radius: 5px;
     margin-bottom: 10px;
     width: 60px;
+    background-color: white;
 }
 
 #min {
-    float:left;
+    float: left;
 }
 
 #max {
-    float:right;
+    float: right;
 }
 
 .resultItem {
-    border-radius:3px;
+    border-radius: 3px;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 10px;
+    transition: transform .2s;    
 }
 
 .resultItem:hover {
-    box-shadow: -1px -2px 8px 0 rgba(0, 0, 0, 0.2), 1px 5px 8px 0 rgba(0, 0, 0, 0.19);    
+    transform: scale(1.03);
+}
+
+#filters {
+    background-color: rgb(20,70, 160);
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: -1px -2px 8px 0 rgba(0, 0, 0, 0.2), 1px 5px 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-control[readonly] {
+    background-color: white;
+}
+
+.input-group-text {
+    margin-bottom: 10px;
+    height: 40px;
+    background-color: white;
+}
+
+.ui-widget-header {
+    background: none;
 }

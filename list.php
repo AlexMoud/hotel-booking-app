@@ -13,7 +13,8 @@
     <div class="container" id="mainBody">
         <div class="row">
             <!-- SIDE MENU - FILTERS -->
-            <div class="col-lg-3" id="filters">
+            <div class="col-lg-3" >
+                <div class="container-fluid" id="filters">
                 <h5 style="text-align: center">FIND THE PERFECT HOTEL</h5>
                 <!-- FORM -->
                 <form>
@@ -71,8 +72,8 @@
                     <div id="slider-range"></div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <p style="float:left;font-size:0.9em;">PRICE MIN</p>
-                            <p style="float:right;font-size:0.9em;">PRICE MAX</p>                            
+                            <p style="float:left;font-size:0.9em;color:white;">MIN &euro;</p>
+                            <p style="float:right;font-size:0.9em;color:white;">MAX &euro;</p>                            
                         </div>
                     </div>
                     <div class="input-group">
@@ -97,6 +98,7 @@
                         
                     </div>
                 </form>
+                </div>
             </div>
 
             <!-- MAIN BODY - ROOMS -->
@@ -146,7 +148,7 @@
                                         <img src="images/rooms/<?php echo $row["photo"]?>">
                                     </div>
                                     
-                                    <div class="col-sm-9" id="itemBody">
+                                    <div class="col-sm-9 itemBody">
                                         <h5><?php echo $row["name"]?></h5>
                                         <h6><?php echo $row["city"].','.$row["area"];?></h6>
                                         <p><?php echo $row["short_description"];?></p>
@@ -154,15 +156,15 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-sm-12">
-                                        <button class="btn btn-danger goToRoom" onclick="goToRoom('<?php echo $row["name"];?>')">Go to Room</button>
+                                    <div class="col-sm">
+                                        <button class="btn btn-success goToRoom" onclick="goToRoom('<?php echo $row["name"];?>')">Go to Room</button>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <div class="price">
-                                            <p>Per Night: <?php echo $row["price"];?>€</p>
+                                            <p>Per Night:<span class="priceValue"> <?php echo $row["price"];?></span>€</p>
                                         </div>
                                     </div>
                                     <div class="col-sm-9">
@@ -198,6 +200,9 @@
     <?php  include 'scripts.html' ?>
     <script src="js/datepicker.js"></script>
     <script src="js/list.js"></script>
+    <script>
+    
+    </script>
 </body>
 
 </html>

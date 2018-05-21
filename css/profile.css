@@ -11,7 +11,7 @@
 }
 
 #profileActive {
-    color: rgb(240, 100, 0);
+    color: rgb(20, 70, 160);
 }
 
 #mainBody {
@@ -21,14 +21,14 @@
 }
 
 .bookingHeading h5 {
-    background-color: rgb(240, 100, 0);
+    background-color: rgb(20, 70, 160);
     color: white;
     border-radius: 3px;
     padding: 1%;
 }
 
 h5 {
-    color: rgb(240, 100, 0);
+    color: rgb(20, 70, 160);
 }
 
 .goToRoom {
@@ -59,7 +59,7 @@ h5 {
 }
 
 #itemBody {
-    border-left: 1px solid rgb(240, 100, 0);
+    border-left: 1px solid rgb(20, 70, 160);
 }
 
 img {
@@ -68,11 +68,27 @@ img {
 }
 
 #reviewResults i {
-    color: #FFD700;
+    color: rgb(240, 100, 0);
 }
 
 .resultItem {
-    border-radius:3px;
+    border-radius: 3px;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 10px;
+    transition: transform .2s;
+}
+
+.resultItem:hover {
+    transform: scale(1.03);
+}
+
+.favorites, .reviews {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.resultItem h5 {
+    color: black;
+    letter-spacing: 1px;
+    font-weight: bold;
 }

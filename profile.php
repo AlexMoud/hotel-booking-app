@@ -15,10 +15,19 @@
         <div class="row">
             <!-- Side Info  -->
             <div class="col-lg-3">
-                <h5>Favorites <i class="fa fa-heart"></i></h5>
-                <div id="favoriteResults"></div>
-                <h5>Reviews <i class="fa fa-comment"></i></h5>
-                <div id="reviewResults"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-12 favorites">
+                            <h5>Favorites <i class="fa fa-heart"></i></h5>
+                            <div id="favoriteResults"></div>
+                        </div>
+                        <br> 
+                        <div class="col-sm-6 col-lg-12 reviews">
+                            <h5>Reviews <i class="fa fa-comment"></i></h5>
+                            <div id="reviewResults"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <!-- MAIN BODY - ROOMS -->

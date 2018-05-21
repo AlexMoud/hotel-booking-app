@@ -70,7 +70,7 @@
 
                     <div class="row">
                         <div class="col-sm-12">
-                            <button class="btn btn-danger goToRoom" onclick="goToRoom('<?php echo $row["name"];?>')">Go to Room</button>
+                            <button class="btn btn-success goToRoom" onclick="goToRoom('<?php echo $row["name"];?>')">Go to Room</button>
                         </div>
                     </div>
 
