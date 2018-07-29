@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>  
+<head>
     <?php include 'head.html' ?>
     <link rel="stylesheet" type="text/css" href="css/landing.css">
 </head>
@@ -9,7 +9,7 @@
 <body>
     <!-- Upper Menu -->
     <?php include 'header.html' ?>
-    
+
     <!-- Search Box -->
     <div class="container searchMenu">
         <form action="list.php" method="POST">
@@ -21,8 +21,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <select id="city" name="city">
-                        <option value="">City</opiton>
-                        <?php 
+                        <option value="">City</option>
+                        <?php
                             include_once('php/db.php');
                             $sql =  'SELECT DISTINCT city FROM room';
                             $result = $conn->query($sql);
@@ -30,7 +30,7 @@
                                 while($row = $result->fetch_assoc()) {
                             ?>
                             <option value="<?php echo $row["city"];?>"><?php echo $row["city"];?></option>
-                            <?php 
+                            <?php
                                 }
                             }
                         ?>
@@ -39,7 +39,7 @@
                 <div class="col-md-6">
                     <select id="roomType" name="roomType">
                         <option value="">Room Type</opiton>
-                        <?php 
+                        <?php
                             include_once('php/db.php');
                             $sql =  'SELECT * FROM room_type';
                             $result = $conn->query($sql);
@@ -47,7 +47,7 @@
                                 while($row = $result->fetch_assoc()) {
                             ?>
                             <option value="<?php echo $row["id"];?>"><?php echo $row["room_type"];?></option>
-                            <?php 
+                            <?php
                                 }
                             }
                             ?>
@@ -81,7 +81,7 @@
             </div>
         </form>
     </div>
-    
+
     <?php include 'footer.html' ?>
 
 

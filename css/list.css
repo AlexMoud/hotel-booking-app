@@ -1,7 +1,6 @@
 .container {
     padding: 1%;
     margin: 0 auto;
-    min-height: 100%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -14,6 +13,7 @@
     background: radial-gradient(at 50% 0, gray, transparent 70%);
     background-size: 100% 8px;
     background-repeat: no-repeat;
+    min-height: calc(100vh - 115px);
 }
 
 select {
@@ -38,7 +38,7 @@ input[type=submit] {
 }
 
 .bookingHeading h5 {
-    background-color: rgb(20,70, 160);
+    background-color: rgb(20, 70, 160);
     color: white;
     border-radius: 3px;
     padding: 1%;
@@ -80,7 +80,7 @@ input[type=submit] {
 }
 
 .itemBody {
-    border-left: 1px solid rgb(20,70, 160);
+    border-left: 1px solid rgb(20, 70, 160);
 }
 
 .itemBody h5 {
@@ -98,9 +98,9 @@ img {
     margin-top: 10px;
 }
 
-input#min[readonly], input#max[readonly] {
+#min, #max {
     background-color: lightgray;
-    border: 0;
+    border: 2px solid orange;
     font-size: 0.9em;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -120,7 +120,7 @@ input#min[readonly], input#max[readonly] {
     border-radius: 3px;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 10px;
-    transition: transform .2s;    
+    transition: transform .2s;
 }
 
 .resultItem:hover {
@@ -128,7 +128,7 @@ input#min[readonly], input#max[readonly] {
 }
 
 #filters {
-    background-color: rgb(20,70, 160);
+    background-color: rgb(20, 70, 160);
     border-radius: 5px;
     padding-top: 20px;
     padding-bottom: 20px;

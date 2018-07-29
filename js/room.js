@@ -51,7 +51,7 @@ function addReview() {
         type: 'POST',
         data: myJSON,
         success: function (data) {
-            $("#reviews").html(data);
+            $("#reviews").text(data);
         }
     });
 }

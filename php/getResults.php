@@ -61,7 +61,7 @@
                             <img src="images/rooms/<?php echo $row["photo"]?>">
                         </div>
                         
-                        <div class="col-sm-9" id="itemBody">
+                        <div class="col-sm-9 itemBody">
                             <h5><?php echo $row["name"]?></h5>
                             <h6><?php echo $row["city"].','.$row["area"];?></h6>
                             <p><?php echo $row["short_description"];?></p>

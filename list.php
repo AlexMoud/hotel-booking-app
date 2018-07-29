@@ -72,8 +72,8 @@
                     <div id="slider-range"></div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <p style="float:left;font-size:0.9em;color:white;">MIN &euro;</p>
-                            <p style="float:right;font-size:0.9em;color:white;">MAX &euro;</p>                            
+                            <p style="float:left;font-size:0.9em;color:white;">MIN</p>
+                            <p style="float:right;font-size:0.9em;color:white;">MAX</p>                            
                         </div>
                     </div>
                     <div class="input-group">
