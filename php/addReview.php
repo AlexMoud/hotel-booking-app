@@ -26,19 +26,20 @@
                 // output data of each row
                 $reviewCounter = 0;
                 while($row = $result->fetch_assoc()) {
-                    $reviewCounter++;?>
+                    $reviewCounter++;
+                    ?>
                     <div class="row" id="listReviews">
-                        <div class="col-lg-12">
+                        <div class="col-sm-12">
                             <h5><?php echo $reviewCounter;?> - user_default1 - 
                             <?php for ($i = 0; $i < $row["rate"] ; $i++) { ?>
                                 <i class="fa fa-star"></i>
                             <?php } ?>
                             </h5>
-                            <p style="font-size:0.8em">Add time: <?php echo $row["date_created"];?></p>                    
+                            <p style="font-size:0.8em">Add time: <?php echo $row["date_created"];?></p>
                             <p><?php echo htmlentities($row["text"]);?></p>
                         </div>
                     </div>
-                <?php
+                    <?php
                 }
             } 
             $conn->close();  
@@ -46,7 +47,7 @@
             echo "Error: " . $tsql . "<br>" . $conn->error;
         }
     } else {
-        echo "Already reviewed this room";
+         echo "<em>Already reviewed this room.</em>";
     }
 ?>
 
